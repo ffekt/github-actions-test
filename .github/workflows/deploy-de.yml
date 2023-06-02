@@ -1,0 +1,15 @@
+name: Deploy DE
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+  workflow_dispatch:
+
+jobs:
+  set_release:
+    runs-on: ubuntu-latest
+    steps:
+      - run:
+          echo ${{ github.ref_name }}
+
