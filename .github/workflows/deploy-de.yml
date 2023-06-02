@@ -9,7 +9,8 @@ on:
 jobs:
   set_release:
     runs-on: ubuntu-latest
+    environment: 'DE Prod'
     steps:
       - run:
-          echo ${{ github.ref_name }}
+          gh variable set CURRENT_RELEASE -b ${{ github.ref_name }}
 
